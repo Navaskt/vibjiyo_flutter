@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:vibgyo/screens/splash_screen/splash_controller.dart';
 import '../../constants/image_constants.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
+
+  final SplashController splashController = Get.put(SplashController());
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,6 @@ class SplashScreen extends StatelessWidget {
               ),
               Positioned(
                 bottom: 120,
-
                 child: Container(
                   height: MediaQuery.of(context).size.height*0.3,
                   width: MediaQuery.of(context).size.width*0.6,
@@ -33,7 +36,6 @@ class SplashScreen extends StatelessWidget {
               ),
             ],
           ),
-
         ],
       ),
     );
