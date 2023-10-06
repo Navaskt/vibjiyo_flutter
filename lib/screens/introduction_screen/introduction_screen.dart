@@ -34,7 +34,7 @@ class IntroductionScreen extends StatelessWidget {
               ),
               const Text(
                 'The best place to \nmeet your perfect \nmatch.',
-                style: TextStyle(color: Colors.black, fontSize: 32),
+                style: TextStyle(color: Colors.black, fontSize: 29,height: 1.1,),
               ),
               const SizedBox(
                 height: 40,

@@ -19,18 +19,19 @@ class TextingStyle {
     fontSize: 30,
     fontWeight: FontWeight.w700,
     color: Colors.black,
+    height: 1.3,
   );
 
   static const font16normal = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    color: Colors.black,
+    color: Color(0xFF6f6f6f),
   );
 
   static const font18bold = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w700,
-    color: Colors.black,
+    color: Color(0xFF6f6f6f),
   );
 
   static const font12normal = TextStyle(

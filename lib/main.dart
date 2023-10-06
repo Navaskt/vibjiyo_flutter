@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:vibgyo/screens/splash_screen/splash_screen.dart';
 
 void main() {
-WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Vibgyo',
       theme: ThemeData(
+        fontFamily: "Sk-Modernist",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                       image: DecorationImage(image: vibgyologo)),
                 ),
               ),
-              const Column(
+               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Welcome to Vibgyo',style: TextingStyle.font30bold,),

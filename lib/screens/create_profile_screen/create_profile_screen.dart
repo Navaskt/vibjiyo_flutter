@@ -96,8 +96,7 @@ class CreateProfileScreen extends StatelessWidget {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
-                      color: Color(
-                          0xFFE8E6EA), // Set the enabled border color here
+                      color: ColorConstant.bordercolor, // Set the enabled border color here
                     ),
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -182,15 +181,13 @@ class CreateProfileScreen extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color(
-                            0xFFE8E6EA), // Set the focused border color here
+                        color: ColorConstant.bordercolor // Set the focused border color here
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color(
-                            0xFFE8E6EA), // Set the enabled border color here
+                        color:ColorConstant.bordercolor // Set the enabled border color here
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -220,7 +217,7 @@ class CreateProfileScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: ColorConstant.bordercolor,
+                  color: const Color(0xFFF1EFEF),
                 ),
                 child: Center(
                     child: Row(

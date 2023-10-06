@@ -25,15 +25,17 @@ class DistancePreferenceScreen extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Your distance\npreference?',
                   style: TextingStyle.font30bold,
+
                 ),
-                Text(
+                const SizedBox(height: 15,),
+                const Text(
                   'Use the slider to set the maximum distance you would like potential matches to be located',
                   style: TextingStyle.font12normal,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
                 Obx(()

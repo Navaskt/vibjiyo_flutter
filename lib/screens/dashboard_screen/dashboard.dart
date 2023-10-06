@@ -293,8 +293,7 @@ class Dashboard extends StatelessWidget {
                                 children: [
                                   CachedNetworkImage(
                                       height:
-                                          MediaQuery.of(context).size.height *
-                                              .3,
+                                          MediaQuery.of(context).size.height * .29,
                                       imageUrl: image[index],
                                       fit: BoxFit.cover,
                                       placeholder: (_, __) => Container(
