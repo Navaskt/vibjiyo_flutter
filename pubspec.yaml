@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.6
   country_picker: ^2.0.21
+  intl: ^0.18.1
+  cached_network_image: ^3.3.0
+  lottie: ^2.6.0
+  chat_bubbles: ^1.5.0
+  percent_indicator: ^4.2.3
 
 
 dev_dependencies:
@@ -68,6 +73,16 @@ flutter:
     - assets/images/bh2_mg.png
     - assets/images/VIBGYO-0.png
     - assets/images/buttonbg.png
+    - assets/images/abstract-rainbow-background.jpg
+    - assets/images/download (3) 1.png
+    - assets/images/btn_bg.png
+    - assets/images/pro_container_bg.png
+    - assets/images/photo.jpg
+    - assets/images/loading.json
+    - assets/images/bg_img.png
+    - assets/images/gen.png
+    - assets/images/crown.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

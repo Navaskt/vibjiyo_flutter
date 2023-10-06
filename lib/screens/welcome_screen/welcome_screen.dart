@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vibgyo/screens/phone_number_screen/phone_number_screen.dart';
+import 'package:vibgyo/constants/text_styles.dart';
+import 'package:vibgyo/screens/create_profile_screen/create_profile_screen.dart';
 import 'package:vibgyo/widgets/customButton.dart';
+
 import '../../constants/image_constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -12,43 +14,55 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(19.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.5,
-                width: MediaQuery.of(context).size.width,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                  image: welcomecircle,
-                )),
+              Center(
+                child: Container(
+                  height: 100,
+                  width: 280,
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(image: vibgyologo)),
+                ),
               ),
-              const Text(
-                'Let’s get closer!',
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Text(
-                'The best place to \nmeet your perfect \nmatch.',
-                style: TextStyle(color: Colors.black, fontSize: 28),
-              ),
-              const SizedBox(
-                height: 40,
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Welcome to Vibgyo',style: TextingStyle.font30bold,),
+                  Text('Please follow these House Rules.',style: TextingStyle.font16normal,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Be yourself',style: TextingStyle.font18bold,),
+                  Text('Make sure your photos, age, and bio are true to who you are.',style: TextingStyle.font16normal,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Stay safe',style: TextingStyle.font18bold,),
+                  Text("Don't be too quick to give out personal information.",style: TextingStyle.font16normal,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Be proactive',style: TextingStyle.font18bold,),
+                  Text("Always report bad behaviour.",style: TextingStyle.font16normal,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('Be proactive',style: TextingStyle.font18bold,),
+                  Text("Always report bad behaviour.",style: TextingStyle.font16normal,),
+                ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
-                    onTap: () {
-                      Get.to(PhoneScreen());
-                    },
-                    child: CustomButton('Explore Now'),),
+                      onTap: () {
+                        Get.to(CreateProfileScreen());
+                      },
+                      child: CustomButton('I Agree'))
                 ],
-              ),
+              )
             ],
           ),
         ),
