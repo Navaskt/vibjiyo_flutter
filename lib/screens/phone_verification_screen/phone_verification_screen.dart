@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vibgyo/constants/custom_text_formfield.dart';
+import 'package:vibgyo/screens/phone_verification_screen/verification_controller.dart';
 import 'package:vibgyo/screens/welcome_screen/welcome_screen.dart';
 import 'package:vibgyo/widgets/customButton.dart';
 
 import '../../constants/image_constants.dart';
 
 class PhoneVerificationScreen extends StatelessWidget {
-  const PhoneVerificationScreen({super.key});
+   PhoneVerificationScreen({super.key});
+
+  final VerificationController verificationController = Get.put(VerificationController());
 
   @override
   Widget build(BuildContext context) {
@@ -49,50 +52,41 @@ class PhoneVerificationScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SizedBox(
-                          height: 70,
-                          width: 66,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15)),
+                    Obx(
+                          () => Visibility(
+                        visible: verificationController.isOtpSent.value,
+                        child: SizedBox(
+                          height: 80,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: List.generate(
+                              4,
+                                  (index) => SizedBox(
+                                height: 70,
+                                width: 66,
+                                child: TextFormField(
+                                  keyboardType: TextInputType.number,
+                                  // controller:
+                                  // AuthController.instance.otpController[index],
+                                  textAlign: TextAlign.center,
+                                  onChanged: (value) {
+                                    if (value.length == 1 && index <= 3) {
+                                      FocusScope.of(context).nextFocus();
+                                    } else if (value.isNotEmpty && index > 0) {
+                                      FocusScope.of(context).previousFocus();
+                                    }
+                                  },
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      hintText: '*'),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 70,
-                          width: 66,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 70,
-                          width: 66,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15)),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 70,
-                          width: 66,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15)),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

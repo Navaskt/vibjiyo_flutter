@@ -28,9 +28,10 @@ class DistancePreferenceScreen extends StatelessWidget {
                 const Text(
                   'Your distance\npreference?',
                   style: TextingStyle.font30bold,
-
                 ),
-                const SizedBox(height: 15,),
+                const SizedBox(
+                  height: 15,
+                ),
                 const Text(
                   'Use the slider to set the maximum distance you would like potential matches to be located',
                   style: TextingStyle.font12normal,
@@ -38,34 +39,53 @@ class DistancePreferenceScreen extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                Obx(()
-                    => Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Distance preference',
-                          style: TextingStyle.font14bold,
-                        ),
-                        Text(distancePreferenceController.sliderValue.value.toStringAsFixed(2), style: TextingStyle.font14bold),
-                      ],
-                    ),
+                Obx(
+                  () => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Distance preference',
+                        style: TextingStyle.font14bold,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                              distancePreferenceController.sliderValue.value
+                                  .toStringAsFixed(2),
+                              style: TextingStyle.font14bold),
+                          const Text(' KM',
+                              style: TextingStyle.font14bold),
+                        ],
+                      ),
+                      
+                    ],
+                  ),
                 ),
-               Slider(value: distancePreferenceController.sliderValue.value, onChanged: distancePreferenceController.onSliderValueChanged,
-               min: 0,
-               max: 120,)
+                Obx(
+                   () =>
+                     Slider(
+                      value: distancePreferenceController.sliderValue.value,
+                      
+                      onChanged: distancePreferenceController.onSliderValueChanged,
+                      min: 0,
+                      max: 120,
+                    ),
+                )
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text('You can change preferences later in Settings'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
-                GestureDetector(onTap: () {
-                  Get.to(IntrestSelectionScreen());
-                }, child: CustomButton('Next')),
-                SizedBox(
+                GestureDetector(
+                    onTap: () {
+                      Get.to( InterestSelectionScreen());
+                    },
+                    child: CustomButton('Next')),
+                const SizedBox(
                   height: 120,
                 ),
               ],

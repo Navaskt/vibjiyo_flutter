@@ -15,6 +15,8 @@ const  drawerBackground = AssetImage("assets/images/bg_img.png");
 
 const  loadingGif = AssetImage("assets/images/loading.json");
 
+const  rainbow = AssetImage("assets/images/abstract-rainbow-background.jpg");
+
 const  detailsPageLikeBg =AssetImage("assets/images/photo.jpg");
 
 const  proContainerBg =AssetImage("assets/images/pro_container_bg.png");

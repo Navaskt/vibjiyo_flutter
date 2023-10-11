@@ -10,9 +10,9 @@ class SplashController extends GetxController {
 
   splashOn() {
     Future.delayed(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
       () async {
-        Get.to(IntroductionScreen());
+        Get.offAll(const IntroductionScreen());
       },
     );
   }
