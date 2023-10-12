@@ -25,9 +25,14 @@ class CountryPickerController extends GetxController{
     if(text.isEmpty ){
       errorText.value = 'Please enter your number';
       errorColor.value = Colors.red;
-    }else if (text.length < 10) {
+    }
+    else if (text.length < 10) {
       errorText.value = 'Please enter valid mobilenumber';
       errorColor.value = Colors.red;
+    }else if (text.length > 10) {
+      errorText.value = 'Please enter valid mobilenumber';
+      errorColor.value = Colors.red;
+
     }else if (text.length == 10) {
       errorText.value = '';
       errorColor.value = ColorConstant.bordercolor;

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vibgyo/constants/colorconstants.dart';
 
 class TextingStyle {
 
@@ -44,5 +45,11 @@ class TextingStyle {
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: Colors.black,
+  );
+
+  static const font12normalbordercolor = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: ColorConstant.bordercolor,
   );
 }

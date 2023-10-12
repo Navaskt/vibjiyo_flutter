@@ -5,8 +5,10 @@ import 'package:record/record.dart';
 import 'package:get/get.dart';
 
 class AboutCreateController extends GetxController{
+  late StreamSubscription<PlayerState> playerStateSubscription;
 
-
+  var isPlaying = false.obs;
+  var tap = false.obs;
   late Record audioRecord;
   late AudioPlayer audioPlayer;
   RxBool isRecording = false.obs;
@@ -41,7 +43,7 @@ class AboutCreateController extends GetxController{
   Future<void> stopRecording() async {
     try {
       String? path = await audioRecord.stop();
-
+      pauseButtonPress();
       isRecording.value = false;
       audioPath.value = path!;
       // maintainController.audioPath.value = path;
@@ -60,16 +62,21 @@ class AboutCreateController extends GetxController{
     try {
 
       Source urlSourse = UrlSource(audioPath.value);
-
       await audioPlayer.play(urlSourse);
       startTimer();
-      audioPlayer.onPlayerStateChanged.listen((PlayerState state) {
+
+      playerStateSubscription = audioPlayer.onPlayerStateChanged.listen((PlayerState state)  {
         if (state == PlayerState.completed) {
+          playerStateSubscription.cancel();
           stopTimer();
+          print('okey');
+          pauseButtonPress();
+          resetTimer();
+
         }
       });
     } catch (e) {
-      // print("error");
+       print("error--------${e.toString()}");
     }
   }
 
@@ -104,6 +111,10 @@ class AboutCreateController extends GetxController{
     _timer!.cancel();
     minutes.value = 0;
     seconds.value = 0;
+  }
+
+  void pauseButtonPress() {
+    isPlaying.value = !isPlaying.value;
   }
 
 //  uploadAudio() async {
