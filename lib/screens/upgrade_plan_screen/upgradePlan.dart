@@ -67,7 +67,7 @@ class UpgradePlan extends StatelessWidget {
                               height: 43,
                               color: Colors.black.withOpacity(0.4),
                               child: const Center(
-                                child: Text("1 MONTH PLAN",
+                                child: Text("STARTER",
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700,
@@ -77,7 +77,7 @@ class UpgradePlan extends StatelessWidget {
                             const SizedBox(
                               height: 10,
                             ),
-                            const Text("₹99",
+                            const Text("₹100",
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,

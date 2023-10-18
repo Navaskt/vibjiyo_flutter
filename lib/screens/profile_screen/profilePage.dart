@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
 import '../../constants/colorconstants.dart';
 import '../profile_edit_screen/profileEditPage.dart';
 

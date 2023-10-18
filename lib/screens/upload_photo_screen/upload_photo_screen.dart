@@ -48,8 +48,7 @@ class UploadPhotoScreen extends StatelessWidget {
                               )
                                   : BoxDecoration(
                                 image: DecorationImage(
-                                  fit: BoxFit.fitWidth
-                                  ,
+                                  fit: BoxFit.fitWidth,
                                   image: FileImage(
                                     File(uploadController.imagePath1.value),
                                   ),
@@ -140,7 +139,7 @@ class UploadPhotoScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                             // Add additional widgets inside the stack if needed
                           ],
                         ),
