@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vibgyo/constants/image_constants.dart';
-import '../message_details_screen/message_details.dart';
+import 'package:vibgyo/screens/message_details_screen/messageDetails.dart';
 
 class MessageList extends StatelessWidget {
   MessageList({super.key});
